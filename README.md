@@ -5,7 +5,7 @@ Given movies, users, ratings, find the latent U,V features to minimize \sum(rij-
 load(0.3) Use 30% data as the train set and 70% as the test set. 
 m1_train(20) Use the traditional collaborative filtering approach to train the model. \hat{rij}=u_i \cdot v_j. Initiating the model by choosing U,V randomly. #of iterations=20. Return the MSE on the training set. 
 m1_train(20,True) Use the current U,V saved in the class. train the model 20 more iterations. 
-m2_train(20) Use this value as the new \hat{rij}. 
+m2_train(20) ![alt text](https://github.com/shilinni/Recommender-System/blob/master/images/newrhat.png) Use this value as the new \hat{rij}. 
 
 MSE_on_test_m1() mean square error if you are using model1. 
 MSE_on_test_m2() mean square error if you are using model2.
