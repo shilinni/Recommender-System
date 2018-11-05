@@ -31,5 +31,5 @@ EXAMPLE: <br />
 file_name = "movie_ratings.csv"<br />
 r1 = recommender(file_name, 10, 0.001). #Initiate the class by giving it a file_name,k value and alpha. k is the number of latent features. alpha is the learning rate. <br />
 k_fold(r1, 5, True, 4) #Use k-fold cross validation by setting k to 5. #iterations=4. <br />
-r1.MSEs[iter,i,k] #get the MSE when k=k, # of iters=iter, on the ith split
+r1.MSEs[4,1,5] #get the MSE when k=5, # of iters=4, on the 1st split
 
