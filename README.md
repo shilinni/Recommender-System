@@ -33,4 +33,3 @@ r1 = recommender(file_name, 10, 0.001). #Initiate the class by giving it a file_
 k_fold(r1, 5, True, 4) #Use k-fold cross validation by setting k to 5. #iterations=4. <br />
 r1.MSEs[iter,i,k] #get the MSE when k=k, # of iters=iter, on the ith split
 
-#print 5 graphs of the relationship between # of iterations and MSE. red line is model1, blue line if model2. 
