@@ -218,11 +218,9 @@ def k_fold_newuser(r,kf,m1,iters):
         r.vlist = r.fulllist[:i * testlen] + r.fulllist[(i + 1) * testlen:]
 
         ur1user = set([i for i, j, r in r.vlist])
-        l=[]
         for x in r.testvlist:
-            if x[0] not in ur1user:
-                l.append(x)
-        r.testvlist=list(l)
+            if x[0] in ur1user:
+                r.testvlist.remove(x)
 
         if m1:
             r.m1_train(10, False)
