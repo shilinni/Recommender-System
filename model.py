@@ -274,20 +274,25 @@ def p2():
     plt.plot(ks, err1, 'r--', ks, err2, 'b--')
     plt.show()
 
-
 def p3():
     # test new user
     kf = 4
-    iters = 3
+    iters = 4
     r1 = recommender(file_name, 10, 0.001)
     r2 = recommender(file_name, 10, 0.001)
     k_fold_newuser(r1, kf, True, iters)
     k_fold_newuser(r2, kf, True, iters)
     err1 = []
     err2 = []
-    for i in range(kf):
-        err1.append(r1.MSEs[(30, i, kf)])
-        err2.append(r2.MSEs[(30, i, kf)])
-    plt.plot([1, 2, 3, 4], err1, 'r--', [1, 2, 3, 4], err2, 'b--')
+    for it in range(iters):
+        e1 = 0
+        e2 = 0
+        for i in range(kf):
+            e1 += r1.MSEs[(it * 10 + 10, i, 4)]
+            e2 += r2.MSEs[(it * 10 + 10, i, 4)]
+        err1.append(e1 / float(kf))
+        err2.append(e2 / float(kf))
+    plt.plot([10, 20, 30, 40], err1, 'r--', [10, 20, 30, 40], err2, 'b--')
     plt.show()
+
 
